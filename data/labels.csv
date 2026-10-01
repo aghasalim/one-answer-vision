@@ -1,0 +1,157 @@
+image,category,question,truth,tolerance,blur,rotation,exposure,clutter
+dial_000.png,dial,"What temperature is the oven dial set to, in degrees?",60,10,0,0,0.66,0
+dial_001.png,dial,What temperature is the thermostat dial set to?,19,1,1,0,1.0,0
+dial_002.png,dial,Which programme number is the washing machine dial pointing at?,12,0,2,-4.1,1.2,0
+dial_003.png,dial,Which programme number is the washing machine dial pointing at?,10,0,0,-6.0,1.0,1
+dial_004.png,dial,Which programme number is the washing machine dial pointing at?,11,0,1,-9.0,1.0,1
+dial_005.png,dial,What temperature is the thermostat dial set to?,21,1,2,0,1.29,1
+dial_006.png,dial,What temperature is the thermostat dial set to?,21,1,0,0,0.64,0
+dial_007.png,dial,"What temperature is the oven dial set to, in degrees?",60,10,1,0,1.38,0
+dial_008.png,dial,What temperature is the thermostat dial set to?,17,1,2,5.9,1.0,0
+dial_009.png,dial,What temperature is the thermostat dial set to?,19,1,0,-8.5,1.0,0
+dial_010.png,dial,What temperature is the thermostat dial set to?,26,1,1,0,1.0,1
+dial_011.png,dial,"What temperature is the oven dial set to, in degrees?",60,10,2,0,1.43,0
+dial_012.png,dial,"What temperature is the oven dial set to, in degrees?",190,10,0,0,1.0,1
+dial_013.png,dial,"What temperature is the oven dial set to, in degrees?",80,10,1,0,0.44,0
+dial_014.png,dial,Which programme number is the washing machine dial pointing at?,4,0,2,11.6,0.6,0
+dial_015.png,dial,What temperature is the thermostat dial set to?,30,1,0,11.3,1.0,1
+dial_016.png,dial,Which programme number is the washing machine dial pointing at?,10,0,1,0,1.0,1
+dial_017.png,dial,Which programme number is the washing machine dial pointing at?,3,0,2,1.3,1.48,1
+dial_018.png,dial,"What temperature is the oven dial set to, in degrees?",210,10,0,0,1.0,1
+dial_019.png,dial,"What temperature is the oven dial set to, in degrees?",80,10,1,0,1.0,1
+dial_020.png,dial,"What temperature is the oven dial set to, in degrees?",190,10,2,6.3,1.0,0
+dial_021.png,dial,What temperature is the thermostat dial set to?,28,1,0,0,0.68,0
+dial_022.png,dial,What temperature is the thermostat dial set to?,27,1,1,0,1.48,0
+dial_023.png,dial,"What temperature is the oven dial set to, in degrees?",100,10,2,9.1,1.49,0
+dial_024.png,dial,"What temperature is the oven dial set to, in degrees?",110,10,0,0,1.0,0
+dial_025.png,dial,Which programme number is the washing machine dial pointing at?,9,0,1,-8.0,1.0,1
+readout_000.png,readout,What temperature does the oven display show?,140,0,0,13.1,1.3,0
+readout_001.png,readout,What temperature does the oven display show?,155,0,1,0,1.0,0
+readout_002.png,readout,What time is left on the microwave timer?,6:48,0,2,0,0.6,0
+readout_003.png,readout,What temperature does the oven display show?,220,0,0,0,0.55,1
+readout_004.png,readout,What time is left on the microwave timer?,9:01,0,1,0,1.21,0
+readout_005.png,readout,What temperature does the oven display show?,210,0,2,0,1.33,1
+readout_006.png,readout,What weight does the scale show?,102.6,0,0,-12.1,1.0,1
+readout_007.png,readout,What weight does the scale show?,109.2,0,1,0,1.22,1
+readout_008.png,readout,What weight does the scale show?,100.9,0,2,0,1.0,1
+readout_009.png,readout,What weight does the scale show?,87.5,0,0,0,1.0,0
+readout_010.png,readout,What weight does the scale show?,71.0,0,1,0,0.45,0
+readout_011.png,readout,What temperature does the thermostat display show?,25.5,0,2,-10.0,0.35,0
+readout_012.png,readout,What temperature does the oven display show?,160,0,0,-0.7,1.0,1
+readout_013.png,readout,What temperature does the oven display show?,125,0,1,0,1.0,0
+readout_014.png,readout,What weight does the scale show?,72.7,0,2,-5.0,1.42,1
+readout_015.png,readout,What weight does the scale show?,97.7,0,0,0,1.0,0
+readout_016.png,readout,What temperature does the oven display show?,145,0,1,0,1.0,0
+readout_017.png,readout,What temperature does the oven display show?,165,0,2,2.7,1.0,1
+readout_018.png,readout,What time is left on the microwave timer?,3:56,0,0,1.7,1.0,1
+readout_019.png,readout,What time is left on the microwave timer?,18:47,0,1,0,1.0,0
+readout_020.png,readout,What weight does the scale show?,69.3,0,2,0,1.41,0
+readout_021.png,readout,What time is left on the microwave timer?,2:54,0,0,0,1.0,1
+readout_022.png,readout,What temperature does the thermostat display show?,29.5,0,1,3.8,0.57,0
+readout_023.png,readout,What temperature does the thermostat display show?,19.0,0,2,0,1.25,0
+readout_024.png,readout,What temperature does the oven display show?,245,0,0,0,0.48,1
+readout_025.png,readout,What temperature does the thermostat display show?,26.0,0,1,0,1.0,0
+date_000.png,date,What is the best before or expiry date on this label?,2027-12,0,0,13.7,1.0,0
+date_001.png,date,What is the best before or expiry date on this label?,2025-05-07,0,1,0,0.37,1
+date_002.png,date,What is the best before or expiry date on this label?,2027-05-11,0,2,0,1.0,0
+date_003.png,date,What is the best before or expiry date on this label?,2025-08,0,0,9.6,1.0,1
+date_004.png,date,What is the best before or expiry date on this label?,2025-05-28,0,1,0,0.66,0
+date_005.png,date,What is the best before or expiry date on this label?,2027-06-04,0,2,0,1.0,0
+date_006.png,date,What is the best before or expiry date on this label?,2027-07-15,0,0,0,0.41,0
+date_007.png,date,What is the best before or expiry date on this label?,2026-11-14,0,1,0.8,1.0,0
+date_008.png,date,What is the best before or expiry date on this label?,2028-07-21,0,2,0,1.0,0
+date_009.png,date,What is the best before or expiry date on this label?,2027-08,0,0,12.7,1.45,0
+date_010.png,date,What is the best before or expiry date on this label?,2026-07-23,0,1,0,1.21,0
+date_011.png,date,What is the best before or expiry date on this label?,2026-03-10,0,2,0,1.0,0
+date_012.png,date,What is the best before or expiry date on this label?,2028-09-22,0,0,14.5,1.0,1
+date_013.png,date,What is the best before or expiry date on this label?,2028-05-23,0,1,0,1.0,0
+date_014.png,date,What is the best before or expiry date on this label?,2026-11-27,0,2,0,0.42,1
+date_015.png,date,What is the best before or expiry date on this label?,2026-10-25,0,0,0,1.0,0
+date_016.png,date,What is the best before or expiry date on this label?,2027-05-05,0,1,0,0.66,1
+date_017.png,date,What is the best before or expiry date on this label?,2026-12,0,2,5.2,1.0,0
+date_018.png,date,What is the best before or expiry date on this label?,2026-10-27,0,0,-6.7,1.2,0
+date_019.png,date,What is the best before or expiry date on this label?,2027-04,0,1,0,1.0,1
+date_020.png,date,What is the best before or expiry date on this label?,2028-06-03,0,2,0,0.48,0
+date_021.png,date,What is the best before or expiry date on this label?,2026-03-16,0,0,-8.0,1.0,1
+date_022.png,date,What is the best before or expiry date on this label?,2026-01-04,0,1,4.4,1.0,1
+date_023.png,date,What is the best before or expiry date on this label?,2027-08-25,0,2,11.0,1.42,0
+date_024.png,date,What is the best before or expiry date on this label?,2027-12,0,0,0,1.0,0
+date_025.png,date,What is the best before or expiry date on this label?,2028-01,0,1,0,1.33,0
+label_pick_000.png,label_pick,"Which box is the baking soda, the left one or the right one?",left,0,0,3.4,1.0,0
+label_pick_001.png,label_pick,"Which box is the baking soda, the left one or the right one?",left,0,1,0,0.42,1
+label_pick_002.png,label_pick,"Which box is the beef stock, the left one or the right one?",right,0,2,0,0.58,0
+label_pick_003.png,label_pick,"Which box is the soy milk, the left one or the right one?",right,0,0,6.1,1.0,1
+label_pick_004.png,label_pick,"Which box is the baking soda, the left one or the right one?",left,0,1,0,1.0,1
+label_pick_005.png,label_pick,"Which box is the dishwasher tablets, the left one or the right one?",right,0,2,0,0.53,0
+label_pick_006.png,label_pick,"Which box is the soy milk, the left one or the right one?",right,0,0,0,1.34,0
+label_pick_007.png,label_pick,"Which box is the baking powder, the left one or the right one?",right,0,1,1.2,1.27,1
+label_pick_008.png,label_pick,"Which box is the beef stock, the left one or the right one?",left,0,2,0,1.42,1
+label_pick_009.png,label_pick,"Which box is the whole milk, the left one or the right one?",left,0,0,0,1.0,0
+label_pick_010.png,label_pick,"Which box is the baking soda, the left one or the right one?",right,0,1,0,0.52,0
+label_pick_011.png,label_pick,"Which box is the regular coffee, the left one or the right one?",left,0,2,6.0,1.0,0
+label_pick_012.png,label_pick,"Which box is the baking soda, the left one or the right one?",left,0,0,11.5,1.38,1
+label_pick_013.png,label_pick,"Which box is the washing tablets, the left one or the right one?",left,0,1,0,1.0,1
+label_pick_014.png,label_pick,"Which box is the dishwasher tablets, the left one or the right one?",left,0,2,-14.7,1.44,0
+label_pick_015.png,label_pick,"Which box is the baking soda, the left one or the right one?",left,0,0,11.9,1.0,0
+label_pick_016.png,label_pick,"Which box is the washing tablets, the left one or the right one?",left,0,1,0,1.0,1
+label_pick_017.png,label_pick,"Which box is the soy milk, the left one or the right one?",left,0,2,0,1.0,0
+label_pick_018.png,label_pick,"Which box is the whole milk, the left one or the right one?",right,0,0,0,0.58,0
+label_pick_019.png,label_pick,"Which box is the baking soda, the left one or the right one?",left,0,1,0.8,1.0,1
+label_pick_020.png,label_pick,"Which box is the whole milk, the left one or the right one?",left,0,2,0,0.55,1
+label_pick_021.png,label_pick,"Which box is the whole milk, the left one or the right one?",right,0,0,0,1.0,1
+label_pick_022.png,label_pick,"Which box is the chicken stock, the left one or the right one?",right,0,1,0,0.46,0
+label_pick_023.png,label_pick,"Which box is the oat milk, the left one or the right one?",left,0,2,0,1.0,0
+label_pick_024.png,label_pick,"Which box is the skimmed milk, the left one or the right one?",right,0,0,0,0.49,0
+label_pick_025.png,label_pick,"Which box is the dishwasher tablets, the left one or the right one?",left,0,1,0,1.22,1
+medication_000.png,medication,How many tablets per dose?,1,0,0,0,1.0,0
+medication_001.png,medication,How many tablets per dose?,1,0,1,0,0.6,0
+medication_002.png,medication,How many tablets per dose?,2,0,2,14.7,0.56,0
+medication_003.png,medication,How many times a day should it be taken?,4,0,0,0,1.33,1
+medication_004.png,medication,How many times a day should it be taken?,1,0,1,0,1.0,1
+medication_005.png,medication,What is the strength in mg?,500,0,2,0,1.0,1
+medication_006.png,medication,How many times a day should it be taken?,2,0,0,0,0.66,1
+medication_007.png,medication,How many tablets per dose?,2,0,1,0,1.0,0
+medication_008.png,medication,How many tablets per dose?,1,0,2,1.4,1.0,1
+medication_009.png,medication,How many times a day should it be taken?,3,0,0,0,1.22,0
+medication_010.png,medication,How many times a day should it be taken?,4,0,1,0,0.54,1
+medication_011.png,medication,What is the strength in mg?,500,0,2,0,1.0,0
+medication_012.png,medication,How many times a day should it be taken?,2,0,0,6.5,1.0,0
+medication_013.png,medication,How many times a day should it be taken?,2,0,1,0,1.23,0
+medication_014.png,medication,What is the strength in mg?,20,0,2,0,1.0,0
+medication_015.png,medication,What is the strength in mg?,5,0,0,0,1.0,0
+medication_016.png,medication,How many capsules per dose?,2,0,1,-11.3,1.0,0
+medication_017.png,medication,How many tablets per dose?,2,0,2,-10.0,1.0,1
+medication_018.png,medication,How many tablets per dose?,1,0,0,-9.2,0.54,0
+medication_019.png,medication,What is the strength in mg?,20,0,1,0,0.42,0
+medication_020.png,medication,What is the strength in mg?,500,0,2,14.0,1.0,1
+medication_021.png,medication,What is the strength in mg?,20,0,0,0,1.0,0
+medication_022.png,medication,What is the strength in mg?,250,0,1,0,1.41,0
+medication_023.png,medication,What is the strength in mg?,500,0,2,0,1.39,0
+medication_024.png,medication,What is the strength in mg?,10,0,0,1.8,1.0,0
+medication_025.png,medication,How many tablets per dose?,2,0,1,7.9,1.47,0
+button_000.png,button,"Where is the +30 Sec button? Answer with row and column, for example top left or middle centre.",bottom right,0,0,-6.4,1.0,1
+button_001.png,button,"Where is the Menu button? Answer with row and column, for example top left or middle centre.",top left,0,1,0,1.25,1
+button_002.png,button,"Where is the Clock button? Answer with row and column, for example top left or middle centre.",middle left,0,2,0,1.0,1
+button_003.png,button,"Where is the Cancel button? Answer with row and column, for example top left or middle centre.",top left,0,0,10.7,1.0,1
+button_004.png,button,"Where is the Start button? Answer with row and column, for example top left or middle centre.",bottom right,0,1,-14.0,1.48,0
+button_005.png,button,"Where is the Stop button? Answer with row and column, for example top left or middle centre.",bottom left,0,2,0,1.22,1
+button_006.png,button,"Where is the Stop button? Answer with row and column, for example top left or middle centre.",top right,0,0,0,1.0,0
+button_007.png,button,"Where is the Power button? Answer with row and column, for example top left or middle centre.",top right,0,1,0,0.48,0
+button_008.png,button,"Where is the Auto button? Answer with row and column, for example top left or middle centre.",bottom centre,0,2,0,0.4,1
+button_009.png,button,"Where is the Clock button? Answer with row and column, for example top left or middle centre.",bottom left,0,0,14.2,0.39,1
+button_010.png,button,"Where is the Timer button? Answer with row and column, for example top left or middle centre.",middle centre,0,1,0,1.0,1
+button_011.png,button,"Where is the Grill button? Answer with row and column, for example top left or middle centre.",middle right,0,2,0,1.31,0
+button_012.png,button,"Where is the Timer button? Answer with row and column, for example top left or middle centre.",top centre,0,0,0,1.0,0
+button_013.png,button,"Where is the Start button? Answer with row and column, for example top left or middle centre.",bottom centre,0,1,-2.6,1.0,0
+button_014.png,button,"Where is the Timer button? Answer with row and column, for example top left or middle centre.",top right,0,2,0,1.5,0
+button_015.png,button,"Where is the Auto button? Answer with row and column, for example top left or middle centre.",middle right,0,0,13.4,1.0,0
+button_016.png,button,"Where is the Clock button? Answer with row and column, for example top left or middle centre.",top centre,0,1,-8.5,0.68,1
+button_017.png,button,"Where is the +30 Sec button? Answer with row and column, for example top left or middle centre.",top centre,0,2,5.4,1.0,1
+button_018.png,button,"Where is the Power button? Answer with row and column, for example top left or middle centre.",top centre,0,0,5.1,1.34,1
+button_019.png,button,"Where is the Clock button? Answer with row and column, for example top left or middle centre.",top left,0,1,0,1.0,1
+button_020.png,button,"Where is the Auto button? Answer with row and column, for example top left or middle centre.",bottom centre,0,2,4.3,1.44,0
+button_021.png,button,"Where is the +30 Sec button? Answer with row and column, for example top left or middle centre.",middle left,0,0,12.5,1.0,0
+button_022.png,button,"Where is the Menu button? Answer with row and column, for example top left or middle centre.",top right,0,1,0,1.0,1
+button_023.png,button,"Where is the Stop button? Answer with row and column, for example top left or middle centre.",bottom right,0,2,0,1.0,1
+button_024.png,button,"Where is the Start button? Answer with row and column, for example top left or middle centre.",middle left,0,0,-9.2,1.0,0
+button_025.png,button,"Where is the Menu button? Answer with row and column, for example top left or middle centre.",top left,0,1,0,1.0,1
