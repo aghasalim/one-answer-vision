@@ -26,3 +26,44 @@ mentioning small sets (SSDI, 257 images; a 7Seg set of 189 web images) but no do
 a clear licence and labels I could pull in quickly. Skipped, noted in the README.
 
 Tests pass (48) with Ollama mocked. CI runs tests plus the README number check only, no model.
+
+### Thinking variant failure
+
+`ollama pull qwen3-vl:4b` gives the thinking variant. With Ollama 0.35 it ignores
+`think: false` on both `/api/generate` and `/api/chat`, and `/no_think` in the prompt does
+nothing either. With my 40 token budget every answer came back empty: the whole budget went
+into the thinking field. The first CLI call printed a blank line after 19 seconds.
+
+Probed it with a 2000 token budget on 12 images (`scripts/thinking_probe.py`,
+`results/thinking_probe.csv`): 10 of 12 right, but 9 to 57 seconds per question and 40 to
+315 words of reasoning before the answer, which is the opposite of what the project is for.
+Both 7-segment readouts came back as "888". Switched to `qwen3-vl:4b-instruct` (another
+3.3 GB), which answers the terse prompt in about a second once loaded. The default model
+in `oav/vlm.py` is now the instruct tag.
+
+### Full run
+
+468 calls (156 images x 3 regimes) in 6989 s, resumable script, no crashes. Overall
+accuracy: describe 62%, terse 68%, terse with OCR 71%. Terse wins clearly on label pick and
+medication, loses a little on dials, ties on dates and buttons. Dials and readouts are bad
+everywhere. On the 7-segment panels the model answers "888" again and again, so the digit
+rendering is being seen as a block rather than as digits. I expected the dial to be the hard
+one, not the readout.
+
+Words before the answer: median 12 in the describe regime, 0 in the terse ones. That is the
+figure the first Reddit quote is about.
+
+Latency surprise: the terse regime sat at 13 s per call with almost no variance, while the
+smoke test before the run took 0.9 s. Ollama's own timing fields explain it
+(`scripts/latency_probe.py`): with another 4B model loaded by a different job, prompt
+evaluation for one 640 px image took 12 s; halfway through the probe the other model was
+evicted and the same call dropped to 0.5 to 1.4 s. So the eval run latencies are a
+contended measurement and the README says so. I did not rerun the whole set on an idle
+machine because the machine was not idle.
+
+Blur: terse goes 72, 69, 63% from no blur to radius 3.2. OCR helps at blur 0 and 1 and not
+at 2, which is where Apple Vision starts misreading too.
+
+What I would do next: real phone photos from blind users, a bigger set so the OCR deltas
+mean something, a crop-and-zoom step for readouts, and try a 7-segment specific reader
+before the VLM.

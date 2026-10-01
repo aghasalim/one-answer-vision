@@ -1,0 +1,13 @@
+image,category,truth,answer,correct,eval_count,thinking_words,latency_s,done_reason
+dial_000.png,dial,60,70,1,704,315,56.77,stop
+dial_001.png,dial,19,18,1,88,49,11.03,stop
+readout_000.png,readout,140,888,0,67,41,9.5,stop
+readout_001.png,readout,155,888,0,67,41,9.65,stop
+date_000.png,date,2027-12,12-27,1,146,84,13.98,stop
+date_001.png,date,2025-05-07,07MAY25,1,74,39,9.84,stop
+label_pick_000.png,label_pick,left,left,1,70,50,9.9,stop
+label_pick_001.png,label_pick,left,left,1,68,49,9.37,stop
+medication_000.png,medication,1,1,1,66,45,9.0,stop
+medication_001.png,medication,1,1,1,60,40,8.74,stop
+button_000.png,button,bottom right,bottom right,1,430,263,32.2,stop
+button_001.png,button,top left,top left,1,91,61,12.09,stop

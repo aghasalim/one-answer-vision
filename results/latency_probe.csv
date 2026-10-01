@@ -1,0 +1,13 @@
+image,wall_s,load_s,prompt_eval_s,eval_s,total_s,answer
+dial_000.png,13.23,0.01,12.06,0.5,13.23,150 degrees Celsius
+dial_001.png,12.57,0.01,11.75,0.39,12.57,22 degrees Celsius
+readout_000.png,12.86,0.0,12.05,0.4,12.85,348 degrees
+readout_001.png,12.58,0.0,11.79,0.41,12.58,888 degrees
+date_000.png,12.96,0.01,11.84,0.51,12.95,12-27
+date_001.png,13.14,0.01,11.9,0.61,13.14,07 MAY 25
+label_pick_000.png,1.38,0.0,0.21,0.18,1.38,left one
+label_pick_001.png,1.14,0.0,0.27,0.22,1.14,left one
+medication_000.png,1.15,0.0,0.28,0.2,1.15,1 tablet
+medication_001.png,1.03,0.0,0.26,0.19,1.03,1 tablet
+button_000.png,0.56,0.0,0.23,0.23,0.55,bottom right
+button_001.png,0.54,0.0,0.25,0.21,0.54,top left

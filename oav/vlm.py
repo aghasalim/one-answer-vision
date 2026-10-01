@@ -8,7 +8,7 @@ from .ocr import read_text
 from .prompts import build_prompt
 
 OLLAMA = "http://localhost:11434"
-DEFAULT_MODEL = "qwen3-vl:4b"
+DEFAULT_MODEL = "qwen3-vl:4b-instruct"
 
 
 def ask(image_path: str, question: str, regime: str = "terse", model: str = DEFAULT_MODEL,
