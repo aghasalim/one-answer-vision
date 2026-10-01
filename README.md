@@ -61,7 +61,7 @@ build on them without a bigger set.
 
 ### Words before the answer
 
-The complaint in the first Reddit quote, measured. Mean answer length is <!-- num:words_verbose_all -->59.8<!-- /num --> words for
+Mean answer length is <!-- num:words_verbose_all -->59.8<!-- /num --> words for
 the describe prompt and <!-- num:words_terse_all -->2.1<!-- /num --> for the terse prompt. In the describe regime, when the right
 value is in the answer at all, the user hears a median of <!-- num:wb_median_verbose_all -->12.0<!-- /num --> words before it (median
 <!-- num:wb_median_verbose_dial -->38<!-- /num --> on dials, <!-- num:wb_median_verbose_readout -->15<!-- /num --> on readouts). In the terse regimes the median
@@ -87,7 +87,7 @@ budget on top of that.
 Accuracy by Gaussian blur level (radius 0, 1.6, 3.2), terse regime: <!-- num:blur0_terse -->72<!-- /num -->%, <!-- num:blur1_terse -->68<!-- /num -->%,
 <!-- num:blur2_terse -->62<!-- /num -->%. With OCR: <!-- num:blur0_terse_ocr -->76<!-- /num -->%, <!-- num:blur1_terse_ocr -->72<!-- /num -->%, <!-- num:blur2_terse_ocr -->62<!-- /num -->%.
 The describe regime is flat at <!-- num:blur0_verbose -->61<!-- /num -->%, <!-- num:blur1_verbose -->61<!-- /num -->%, <!-- num:blur2_verbose -->65<!-- /num -->%,
-which says more about its errors being elsewhere than about robustness.
+which says more about its errors being elsewhere than about blur.
 
 ![accuracy vs blur](results/accuracy_vs_blur.png)
 
