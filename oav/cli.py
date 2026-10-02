@@ -1,5 +1,6 @@
 """oav ask IMAGE QUESTION   |   oav watch QUESTION"""
 import argparse
+import os
 import sys
 import tempfile
 
@@ -55,7 +56,8 @@ def main(argv=None):
         if k == ord(" "):
             with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as f:
                 cv2.imwrite(f.name, frame)
-                one(f.name)
+            one(f.name)
+            os.unlink(f.name)
     cap.release()
     cv2.destroyAllWindows()
 
