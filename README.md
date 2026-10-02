@@ -23,6 +23,8 @@ are drawn with PIL rather than photographed, so they are an upper bound.
 
 ## Results
 
+![accuracy per category and prompt regime](results/accuracy_bars.svg)
+
 156 synthetic images, 26 per category, one question each, `qwen3-vl:4b-instruct` through Ollama on an
 Apple M4 (24 GB, no CUDA), temperature 0. Accuracy is a tolerance match on the first value in the
 answer (rules in `METHODOLOGY.md`). Every number in this section is tagged and re-derived from
