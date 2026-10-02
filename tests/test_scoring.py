@@ -65,3 +65,8 @@ def test_words_before_answer():
     long = "The image shows a black oven dial with white markings and a red pointer. It is set to 180 degrees."
     assert words_before_answer(long, "180", "dial", 10) in (14, 15, 16, 17)
     assert words_before_answer("I can't tell", "180", "dial", 10) is None
+
+
+def test_unknown_category_raises():
+    with pytest.raises(ValueError):
+        match("3", "3", "weight")
