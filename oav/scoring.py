@@ -24,7 +24,7 @@ def numbers(text: str) -> list[float]:
     return [float(n.replace(",", ".")) for n in NUM.findall(text or "")]
 
 
-def parse_date(text: str):
+def parse_date(text: str) -> tuple[int, int, int | None] | None:
     """Return (year, month, day|None) from the first date-looking thing in text, else None."""
     t = (text or "").lower()
     # 2026-03-12 or 2026/03/12
@@ -57,7 +57,7 @@ def _year(s: str) -> int:
     return y + 2000 if y < 100 else y
 
 
-def _truth_date(truth: str):
+def _truth_date(truth: str) -> tuple[int, int, int | None]:
     parts = truth.split("-")
     return int(parts[0]), int(parts[1]), (int(parts[2]) if len(parts) > 2 else None)
 
