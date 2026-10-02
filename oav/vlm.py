@@ -28,7 +28,7 @@ def ask(image_path: str, question: str, regime: str = "terse", model: str = DEFA
         "options": {"temperature": 0, "num_predict": num_predict, "seed": 0},
     }
     t0 = time.perf_counter()
-    r = requests.post(f"{host}/api/generate", json=body, timeout=600)
+    r = requests.post(f"{host.rstrip('/')}/api/generate", json=body, timeout=600)
     r.raise_for_status()
     dt = time.perf_counter() - t0
     data = r.json()
