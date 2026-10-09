@@ -15,12 +15,12 @@
 <rect x="170" y="141" width="87.0" height="14" rx="3" fill="#d29922"><animate attributeName="width" from="0" to="87.0" begin="0.18s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
 <text x="263.0" y="152.5" fill="#6e7681" font-size="12">19%<animate attributeName="opacity" from="0" to="1" begin="1.08s" dur="0.4s" fill="freeze"/></text>
 <text x="162" y="198.5" fill="#8b949e" text-anchor="end">date</text>
-<rect x="170" y="168" width="421.4" height="14" rx="3" fill="#2f81f7"><animate attributeName="width" from="0" to="421.4" begin="0.16s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
-<text x="597.4" y="179.5" fill="#6e7681" font-size="12">92%<animate attributeName="opacity" from="0" to="1" begin="1.06s" dur="0.4s" fill="freeze"/></text>
-<rect x="170" y="185" width="403.0" height="14" rx="3" fill="#3fb950"><animate attributeName="width" from="0" to="403.0" begin="0.21s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
-<text x="579.0" y="196.5" fill="#6e7681" font-size="12">88%<animate attributeName="opacity" from="0" to="1" begin="1.11s" dur="0.4s" fill="freeze"/></text>
-<rect x="170" y="202" width="403.0" height="14" rx="3" fill="#d29922"><animate attributeName="width" from="0" to="403.0" begin="0.26s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
-<text x="579.0" y="213.5" fill="#6e7681" font-size="12">88%<animate attributeName="opacity" from="0" to="1" begin="1.16s" dur="0.4s" fill="freeze"/></text>
+<rect x="170" y="168" width="439.7" height="14" rx="3" fill="#2f81f7"><animate attributeName="width" from="0" to="439.7" begin="0.16s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
+<text x="615.7" y="179.5" fill="#6e7681" font-size="12">96%<animate attributeName="opacity" from="0" to="1" begin="1.06s" dur="0.4s" fill="freeze"/></text>
+<rect x="170" y="185" width="458.0" height="14" rx="3" fill="#3fb950"><animate attributeName="width" from="0" to="458.0" begin="0.21s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
+<text x="634.0" y="196.5" fill="#6e7681" font-size="12">100%<animate attributeName="opacity" from="0" to="1" begin="1.11s" dur="0.4s" fill="freeze"/></text>
+<rect x="170" y="202" width="458.0" height="14" rx="3" fill="#d29922"><animate attributeName="width" from="0" to="458.0" begin="0.26s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
+<text x="634.0" y="213.5" fill="#6e7681" font-size="12">100%<animate attributeName="opacity" from="0" to="1" begin="1.16s" dur="0.4s" fill="freeze"/></text>
 <text x="162" y="259.5" fill="#8b949e" text-anchor="end">label pick</text>
 <rect x="170" y="229" width="334.3" height="14" rx="3" fill="#2f81f7"><animate attributeName="width" from="0" to="334.3" begin="0.24s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
 <text x="510.3" y="240.5" fill="#6e7681" font-size="12">73%<animate attributeName="opacity" from="0" to="1" begin="1.14s" dur="0.4s" fill="freeze"/></text>
@@ -43,12 +43,12 @@
 <rect x="170" y="385" width="421.4" height="14" rx="3" fill="#d29922"><animate attributeName="width" from="0" to="421.4" begin="0.50s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
 <text x="597.4" y="396.5" fill="#6e7681" font-size="12">92%<animate attributeName="opacity" from="0" to="1" begin="1.40s" dur="0.4s" fill="freeze"/></text>
 <text x="162" y="442.5" fill="#8b949e" text-anchor="end">all</text>
-<rect x="170" y="412" width="284.0" height="14" rx="3" fill="#2f81f7"><animate attributeName="width" from="0" to="284.0" begin="0.48s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
-<text x="460.0" y="423.5" fill="#6e7681" font-size="12">62%<animate attributeName="opacity" from="0" to="1" begin="1.38s" dur="0.4s" fill="freeze"/></text>
-<rect x="170" y="429" width="311.4" height="14" rx="3" fill="#3fb950"><animate attributeName="width" from="0" to="311.4" begin="0.53s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
-<text x="487.4" y="440.5" fill="#6e7681" font-size="12">68%<animate attributeName="opacity" from="0" to="1" begin="1.43s" dur="0.4s" fill="freeze"/></text>
-<rect x="170" y="446" width="320.6" height="14" rx="3" fill="#d29922"><animate attributeName="width" from="0" to="320.6" begin="0.58s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
-<text x="496.6" y="457.5" fill="#6e7681" font-size="12">70%<animate attributeName="opacity" from="0" to="1" begin="1.48s" dur="0.4s" fill="freeze"/></text>
+<rect x="170" y="412" width="288.5" height="14" rx="3" fill="#2f81f7"><animate attributeName="width" from="0" to="288.5" begin="0.48s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
+<text x="464.5" y="423.5" fill="#6e7681" font-size="12">63%<animate attributeName="opacity" from="0" to="1" begin="1.38s" dur="0.4s" fill="freeze"/></text>
+<rect x="170" y="429" width="320.6" height="14" rx="3" fill="#3fb950"><animate attributeName="width" from="0" to="320.6" begin="0.53s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
+<text x="496.6" y="440.5" fill="#6e7681" font-size="12">70%<animate attributeName="opacity" from="0" to="1" begin="1.43s" dur="0.4s" fill="freeze"/></text>
+<rect x="170" y="446" width="329.8" height="14" rx="3" fill="#d29922"><animate attributeName="width" from="0" to="329.8" begin="0.58s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>
+<text x="505.8" y="457.5" fill="#6e7681" font-size="12">72%<animate attributeName="opacity" from="0" to="1" begin="1.48s" dur="0.4s" fill="freeze"/></text>
 <rect x="170" y="477" width="12" height="12" rx="2" fill="#2f81f7"/>
 <text x="187" y="487" fill="#6e7681" font-size="12">describe everything</text>
 <rect x="344" y="477" width="12" height="12" rx="2" fill="#3fb950"/>

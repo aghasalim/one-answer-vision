@@ -1,10 +1,10 @@
 regime,blur,n,accuracy
 verbose,0,54,0.611
 verbose,1,54,0.611
-verbose,2,48,0.646
-terse,0,54,0.722
-terse,1,54,0.685
-terse,2,48,0.625
-terse_ocr,0,54,0.759
-terse_ocr,1,54,0.722
-terse_ocr,2,48,0.625
+verbose,2,48,0.667
+terse,0,54,0.741
+terse,1,54,0.704
+terse,2,48,0.646
+terse_ocr,0,54,0.778
+terse_ocr,1,54,0.741
+terse_ocr,2,48,0.646
