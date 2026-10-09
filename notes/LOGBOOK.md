@@ -67,3 +67,9 @@ at 2, which is where Apple Vision starts misreading too.
 What I would do next: real phone photos from blind users, a bigger set so the OCR deltas
 mean something, a crop-and-zoom step for readouts, and try a 7-segment specific reader
 before the VLM.
+
+2026-10-10. Found a scorer bug: `parse_date("2026-03")` returned year 2003, month 26,
+because the `MM/YY` pattern matched "26-03" inside the ISO year-month. Seven date answers
+that were right (2026-12, 2027-04, 2027-12) were scored wrong. Added a year-month pattern
+before it, tests for it, and rescored `raw.csv` from the stored answers; no other row
+changed. Terse date goes 88 to 100%, terse overall 68 to 70%.

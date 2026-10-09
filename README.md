@@ -36,16 +36,16 @@ answer (rules in `METHODOLOGY.md`). Every number in this section is tagged and r
 |---|---|---|---|
 | dial | <!-- num:acc_verbose_dial -->27<!-- /num -->% | <!-- num:acc_terse_dial -->15<!-- /num -->% | <!-- num:acc_terse_ocr_dial -->23<!-- /num -->% |
 | readout | <!-- num:acc_verbose_readout -->12<!-- /num -->% | <!-- num:acc_terse_readout -->12<!-- /num -->% | <!-- num:acc_terse_ocr_readout -->19<!-- /num -->% |
-| date | <!-- num:acc_verbose_date -->92<!-- /num -->% | <!-- num:acc_terse_date -->88<!-- /num -->% | <!-- num:acc_terse_ocr_date -->88<!-- /num -->% |
+| date | <!-- num:acc_verbose_date -->96<!-- /num -->% | <!-- num:acc_terse_date -->100<!-- /num -->% | <!-- num:acc_terse_ocr_date -->100<!-- /num -->% |
 | label_pick | <!-- num:acc_verbose_label_pick -->73<!-- /num -->% | <!-- num:acc_terse_label_pick -->100<!-- /num -->% | <!-- num:acc_terse_ocr_label_pick -->100<!-- /num -->% |
 | medication | <!-- num:acc_verbose_medication -->77<!-- /num -->% | <!-- num:acc_terse_medication -->100<!-- /num -->% | <!-- num:acc_terse_ocr_medication -->100<!-- /num -->% |
 | button | <!-- num:acc_verbose_button -->92<!-- /num -->% | <!-- num:acc_terse_button -->92<!-- /num -->% | <!-- num:acc_terse_ocr_button -->92<!-- /num -->% |
-| all | <!-- num:acc_verbose_all -->62<!-- /num -->% | <!-- num:acc_terse_all -->68<!-- /num -->% | <!-- num:acc_terse_ocr_all -->70<!-- /num -->% |
+| all | <!-- num:acc_verbose_all -->63<!-- /num -->% | <!-- num:acc_terse_all -->70<!-- /num -->% | <!-- num:acc_terse_ocr_all -->72<!-- /num -->% |
 
 ![accuracy per category](results/accuracy_per_category.png)
 
-The terse prompt is at least as accurate as the describe prompt overall (<!-- num:acc_terse_all -->68<!-- /num -->% against
-<!-- num:acc_verbose_all -->62<!-- /num -->%) and much better on the two text reading categories where the verbose answers
+The terse prompt is at least as accurate as the describe prompt overall (<!-- num:acc_terse_all -->70<!-- /num -->% against
+<!-- num:acc_verbose_all -->63<!-- /num -->%) and much better on the two text reading categories where the verbose answers
 wander: label pick goes from <!-- num:acc_verbose_label_pick -->73<!-- /num -->% to <!-- num:acc_terse_label_pick -->100<!-- /num -->% and medication
 from <!-- num:acc_verbose_medication -->77<!-- /num -->% to <!-- num:acc_terse_medication -->100<!-- /num -->%. Dates and buttons are read well in
 every regime. Dials and 7-segment readouts are read badly in every regime: the best any regime gets on
@@ -54,8 +54,8 @@ often answers "888", which is what every segment lit looks like, so it is seeing
 digits. On dials it either guesses a nearby number or refuses: the terse prompt says "I can't tell" on
 <!-- num:cant_terse_dial -->46<!-- /num -->% of dials, and only <!-- num:cant_terse_all -->8<!-- /num -->% overall.
 
-The OCR pre-pass (Apple Vision text through pyobjc) moves the overall figure from <!-- num:acc_terse_all -->68<!-- /num -->%
-to <!-- num:acc_terse_ocr_all -->70<!-- /num -->%. The gain is on dials (<!-- num:acc_terse_dial -->15<!-- /num -->% to <!-- num:acc_terse_ocr_dial -->23<!-- /num -->%,
+The OCR pre-pass (Apple Vision text through pyobjc) moves the overall figure from <!-- num:acc_terse_all -->70<!-- /num -->%
+to <!-- num:acc_terse_ocr_all -->72<!-- /num -->%. The gain is on dials (<!-- num:acc_terse_dial -->15<!-- /num -->% to <!-- num:acc_terse_ocr_dial -->23<!-- /num -->%,
 where the OCR hands the model the tick labels) and readouts (<!-- num:acc_terse_readout -->12<!-- /num -->% to
 <!-- num:acc_terse_ocr_readout -->19<!-- /num -->%). It does nothing for dates, labels, medication and buttons, which the
 model already reads itself. These are small differences on 26 images per category and I would not
@@ -86,9 +86,9 @@ budget on top of that.
 
 ### Blur
 
-Accuracy by Gaussian blur level (radius 0, 1.6, 3.2), terse regime: <!-- num:blur0_terse -->72<!-- /num -->%, <!-- num:blur1_terse -->68<!-- /num -->%,
-<!-- num:blur2_terse -->62<!-- /num -->%. With OCR: <!-- num:blur0_terse_ocr -->76<!-- /num -->%, <!-- num:blur1_terse_ocr -->72<!-- /num -->%, <!-- num:blur2_terse_ocr -->62<!-- /num -->%.
-The describe regime is flat at <!-- num:blur0_verbose -->61<!-- /num -->%, <!-- num:blur1_verbose -->61<!-- /num -->%, <!-- num:blur2_verbose -->65<!-- /num -->%,
+Accuracy by Gaussian blur level (radius 0, 1.6, 3.2), terse regime: <!-- num:blur0_terse -->74<!-- /num -->%, <!-- num:blur1_terse -->70<!-- /num -->%,
+<!-- num:blur2_terse -->65<!-- /num -->%. With OCR: <!-- num:blur0_terse_ocr -->78<!-- /num -->%, <!-- num:blur1_terse_ocr -->74<!-- /num -->%, <!-- num:blur2_terse_ocr -->65<!-- /num -->%.
+The describe regime is flat at <!-- num:blur0_verbose -->61<!-- /num -->%, <!-- num:blur1_verbose -->61<!-- /num -->%, <!-- num:blur2_verbose -->67<!-- /num -->%,
 which says more about its errors being elsewhere than about blur.
 
 ![accuracy vs blur](results/accuracy_vs_blur.png)

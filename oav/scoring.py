@@ -31,6 +31,10 @@ def parse_date(text: str) -> tuple[int, int, int | None] | None:
     m = re.search(r"(20\d\d)[-/.](\d{1,2})[-/.](\d{1,2})", t)
     if m:
         return int(m[1]), int(m[2]), int(m[3])
+    # 2026-03 or 2026/03 (year first, no day); without this "26-03" below reads as month 26
+    m = re.search(r"(20\d\d)[-/.](\d{1,2})(?![\d])", t)
+    if m:
+        return int(m[1]), int(m[2]), None
     # 12 mar 2026, 12 march 26, mar 12 2026
     m = re.search(r"(\d{1,2})\s*[-/. ]?\s*([a-z]{3})[a-z]*\.?\s*[-/. ,]?\s*(\d{2,4})", t)
     if m and m[2] in MONTHS:
