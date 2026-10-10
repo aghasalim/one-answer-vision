@@ -90,7 +90,10 @@ def match(answer: str, truth: str, category: str, tolerance: float = 0.0) -> boo
         al = a.lower()
         row, col = truth.split()
         row_ok = row in al
-        col_ok = col in al or (col == "centre" and ("center" in al or "middle" in al))
+        # "middle" also names the middle row, so it only counts as the centre column
+        # when the answer names no other column ("middle left" is not the centre).
+        col_ok = col in al or (col == "centre" and (
+            "center" in al or ("middle" in al and not re.search(r"\b(left|right)\b", al))))
         return row_ok and col_ok
     raise ValueError(category)
 

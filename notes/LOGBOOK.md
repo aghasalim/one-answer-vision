@@ -73,3 +73,11 @@ because the `MM/YY` pattern matched "26-03" inside the ISO year-month. Seven dat
 that were right (2026-12, 2027-04, 2027-12) were scored wrong. Added a year-month pattern
 before it, tests for it, and rescored `raw.csv` from the stored answers; no other row
 changed. Terse date goes 88 to 100%, terse overall 68 to 70%.
+
+2026-10-10, later. Second scorer bug, in buttons this time. For a truth of "middle centre"
+any answer with "middle" in it passed the column check, so "middle left" counted as right.
+"middle" now only stands for the centre column when the answer names no other column.
+Rescoring `raw.csv` from the stored answers changed no `correct` value, because none of the
+model's button answers hit that case. It did change `words_before` on the nine date rows from
+the morning's fix, which I had rescored for `correct` but not for words before the answer.
+With those filled in, the describe median goes from 12 to 11 words; the terse medians stay 0.
