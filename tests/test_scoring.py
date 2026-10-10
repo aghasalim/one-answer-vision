@@ -45,6 +45,8 @@ def test_label_pick(ans, truth, ok):
 @pytest.mark.parametrize("ans,truth,ok", [
     ("top left", "top left", True), ("Top row, left column", "top left", True), ("middle centre", "middle centre", True),
     ("middle center", "middle centre", True), ("in the middle", "middle centre", True), ("top right", "top left", False),
+    ("middle left", "middle centre", False), ("middle row, right column", "middle centre", False),
+    ("top middle", "top centre", True), ("middle row, middle column", "middle centre", True),
 ])
 def test_button(ans, truth, ok):
     assert match(ans, truth, "button") is ok

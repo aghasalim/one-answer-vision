@@ -67,9 +67,9 @@ I wouldn't rely on them until I test a bigger set.
 
 The describe prompt gives answers that are <!-- num:words_verbose_all -->59.8<!-- /num --> words long on average. The terse
 prompt gives <!-- num:words_terse_all -->2.1<!-- /num -->. With the describe prompt, when the right value shows up in the answer at
-all, the user hears a median of <!-- num:wb_median_verbose_all -->12.0<!-- /num --> words before it. On dials that median is
+all, the user hears a median of <!-- num:wb_median_verbose_all -->11.0<!-- /num --> words before it. On dials that median is
 <!-- num:wb_median_verbose_dial -->38<!-- /num --> and on readouts it's <!-- num:wb_median_verbose_readout -->15<!-- /num -->. With the terse prompts the median
-is <!-- num:wb_median_terse_all -->0.0<!-- /num -->, so the answer is the first thing the user hears.
+is <!-- num:wb_median_terse_all -->0<!-- /num -->, so the answer is the first thing the user hears.
 
 ![words before answer](results/words_before_answer.png)
 
