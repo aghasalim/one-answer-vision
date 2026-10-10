@@ -1,34 +1,36 @@
 # one-answer-vision
 
-Point the camera, ask one question, get one short answer, offline.
+You point the camera, ask a question, and get a short answer back, all offline.
 
-A small vision language model running locally through Ollama, prompted to answer a blind
-user's question with the value and nothing else, and an evaluation of whether that short
-answer is also a correct one, on the kinds of question people on r/Blind say they actually
-ask: dials, digital readouts, best-before dates, which of two boxes, medication dosing
-lines, and where a button is.
+I run a small vision language model locally through Ollama and prompt it to answer a blind
+user's question with just the value. Then I check whether that short answer is actually
+right. The questions are the kind people on r/Blind say they really ask, like reading a dial
+or a digital display, finding a best-before date, picking one of two boxes, reading the
+dosing line on medication, or finding where a button is.
 
 [![ci](https://github.com/aghasalim/one-answer-vision/actions/workflows/ci.yml/badge.svg)](https://github.com/aghasalim/one-answer-vision/actions/workflows/ci.yml)
 
 ## Abstract
 
-General assistants describe the whole scene before they get to the number, need a network
-connection, and run on someone else's server. I built a tool that sends one image and one
-question to `qwen3-vl:4b` on an Apple M4 through Ollama, with a prompt that asks for the
-answer only, at most six words, and "I can't tell" as the allowed escape. I compared three
-prompt regimes on a synthetic set of 156 labelled images in six categories: the default
-"describe and answer" style, the terse answer-first prompt, and terse plus an OCR pre-pass
-with the Mac's own text recogniser. Results are below, with the caveat that the test images
-are drawn with PIL rather than photographed, so they are an upper bound.
+The usual assistants describe the whole scene before they get to the number. They also
+need internet and run on someone else's server. So I built a tool that sends one image and
+one question to `qwen3-vl:4b` on an Apple M4 through Ollama. The prompt asks for only the
+answer, in six words or fewer, and the model is allowed to say "I can't tell". I tried three
+prompt styles on a synthetic set of 156 labelled images in six categories. The first is the
+usual "describe and answer" style. The second is a terse prompt that puts the answer first,
+and the third is the terse prompt plus an OCR pass with the Mac's built-in text recogniser.
+The results are below. Keep in mind I drew the test images with PIL and didn't photograph
+them, so real photos will probably score lower.
 
 ## Results
 
 ![accuracy per category and prompt regime](results/accuracy_bars.svg)
 
-156 synthetic images, 26 per category, one question each, `qwen3-vl:4b-instruct` through Ollama on an
-Apple M4 (24 GB, no CUDA), temperature 0. Accuracy is a tolerance match on the first value in the
-answer (rules in `METHODOLOGY.md`). Every number in this section is tagged and re-derived from
-`results/summary.csv` and `results/by_blur.csv` by `scripts/check_numbers.py` in CI.
+I used 156 synthetic images, 26 per category, with one question each. The model was
+`qwen3-vl:4b-instruct` through Ollama on an Apple M4 (24 GB, no CUDA) at temperature 0. An
+answer counts as correct if the first value in it is within a tolerance of the truth (the
+rules are in `METHODOLOGY.md`). Every number in this section is tagged, and in CI
+`scripts/check_numbers.py` re-derives it from `results/summary.csv` and `results/by_blur.csv`.
 
 ### Accuracy per category and prompt regime
 
@@ -44,66 +46,68 @@ answer (rules in `METHODOLOGY.md`). Every number in this section is tagged and r
 
 ![accuracy per category](results/accuracy_per_category.png)
 
-The terse prompt is at least as accurate as the describe prompt overall (<!-- num:acc_terse_all -->70<!-- /num -->% against
-<!-- num:acc_verbose_all -->63<!-- /num -->%) and much better on the two text reading categories where the verbose answers
-wander: label pick goes from <!-- num:acc_verbose_label_pick -->73<!-- /num -->% to <!-- num:acc_terse_label_pick -->100<!-- /num -->% and medication
-from <!-- num:acc_verbose_medication -->77<!-- /num -->% to <!-- num:acc_terse_medication -->100<!-- /num -->%. Dates and buttons are read well in
-every regime. Dials and 7-segment readouts are read badly in every regime: the best any regime gets on
-dials is <!-- num:acc_verbose_dial -->27<!-- /num -->% and on readouts <!-- num:acc_terse_ocr_readout -->19<!-- /num -->%. On readouts the model very
-often answers "888", which is what every segment lit looks like, so it is seeing the panel and not the
-digits. On dials it either guesses a nearby number or refuses: the terse prompt says "I can't tell" on
-<!-- num:cant_terse_dial -->46<!-- /num -->% of dials, and only <!-- num:cant_terse_all -->8<!-- /num -->% overall.
+Overall the terse prompt did at least as well as the describe prompt (<!-- num:acc_terse_all -->70<!-- /num -->% against
+<!-- num:acc_verbose_all -->63<!-- /num -->%). It did a lot better on the two categories that need reading text, where the
+long answers tend to wander off. Label pick went from <!-- num:acc_verbose_label_pick -->73<!-- /num -->% to <!-- num:acc_terse_label_pick -->100<!-- /num -->%, and medication
+went from <!-- num:acc_verbose_medication -->77<!-- /num -->% to <!-- num:acc_terse_medication -->100<!-- /num -->%. All three prompts read dates and buttons
+well. They all read dials and 7-segment displays badly though. The best any prompt got on
+dials was <!-- num:acc_verbose_dial -->27<!-- /num -->%, and on readouts <!-- num:acc_terse_ocr_readout -->19<!-- /num -->%. On readouts the model very
+often answers "888", which is what it looks like when every segment is lit. So it sees the panel
+but can't make out the digits. On dials it either guesses a nearby number or gives up. The terse
+prompt says "I can't tell" on <!-- num:cant_terse_dial -->46<!-- /num -->% of dials, and only <!-- num:cant_terse_all -->8<!-- /num -->% overall.
 
-The OCR pre-pass (Apple Vision text through pyobjc) moves the overall figure from <!-- num:acc_terse_all -->70<!-- /num -->%
-to <!-- num:acc_terse_ocr_all -->72<!-- /num -->%. The gain is on dials (<!-- num:acc_terse_dial -->15<!-- /num -->% to <!-- num:acc_terse_ocr_dial -->23<!-- /num -->%,
-where the OCR hands the model the tick labels) and readouts (<!-- num:acc_terse_readout -->12<!-- /num -->% to
-<!-- num:acc_terse_ocr_readout -->19<!-- /num -->%). It does nothing for dates, labels, medication and buttons, which the
-model already reads itself. These are small differences on 26 images per category and I would not
-build on them without a bigger set.
+Adding the OCR pass (Apple Vision text through pyobjc) moved the overall number from <!-- num:acc_terse_all -->70<!-- /num -->%
+to <!-- num:acc_terse_ocr_all -->72<!-- /num -->%. It helped on dials (<!-- num:acc_terse_dial -->15<!-- /num -->% to <!-- num:acc_terse_ocr_dial -->23<!-- /num -->%),
+since the OCR gives the model the tick labels, and on readouts (<!-- num:acc_terse_readout -->12<!-- /num -->% to
+<!-- num:acc_terse_ocr_readout -->19<!-- /num -->%). It didn't change dates, labels, medication or buttons, because the
+model already reads those fine. With only 26 images per category these differences are small, and
+I wouldn't rely on them until I test a bigger set.
 
 ### Words before the answer
 
-Mean answer length is <!-- num:words_verbose_all -->59.8<!-- /num --> words for
-the describe prompt and <!-- num:words_terse_all -->2.1<!-- /num --> for the terse prompt. In the describe regime, when the right
-value is in the answer at all, the user hears a median of <!-- num:wb_median_verbose_all -->12.0<!-- /num --> words before it (median
-<!-- num:wb_median_verbose_dial -->38<!-- /num --> on dials, <!-- num:wb_median_verbose_readout -->15<!-- /num --> on readouts). In the terse regimes the median
-is <!-- num:wb_median_terse_all -->0.0<!-- /num -->: the answer is the first thing said.
+The describe prompt gives answers that are <!-- num:words_verbose_all -->59.8<!-- /num --> words long on average. The terse
+prompt gives <!-- num:words_terse_all -->2.1<!-- /num -->. With the describe prompt, when the right value shows up in the answer at
+all, the user hears a median of <!-- num:wb_median_verbose_all -->12.0<!-- /num --> words before it. On dials that median is
+<!-- num:wb_median_verbose_dial -->38<!-- /num --> and on readouts it's <!-- num:wb_median_verbose_readout -->15<!-- /num -->. With the terse prompts the median
+is <!-- num:wb_median_terse_all -->0.0<!-- /num -->, so the answer is the first thing the user hears.
 
 ![words before answer](results/words_before_answer.png)
 
 ### Latency
 
-Median wall clock per question during the evaluation run: <!-- num:lat_median_verbose_all -->18.0<!-- /num --> s describe, <!-- num:lat_median_terse_all -->13.4<!-- /num --> s
-terse, <!-- num:lat_median_terse_ocr_all -->12.9<!-- /num --> s terse with OCR. Those terse numbers are not what the model needs. Another
-process was running a second 4B model on the same Ollama server throughout the run, and
-`results/latency_probe.csv` shows the cost: with the other model resident, Ollama reports about 12 s
-of prompt evaluation per image (the image encoder is being pushed off the GPU); as soon as the other
-model is evicted the same call takes 0.5 to 1.4 s wall clock. So on an idle M4 the terse answer comes
-back in about a second, and under contention in about 13. The describe regime pays for its 300 token
-budget on top of that.
+During the evaluation run the median time per question was <!-- num:lat_median_verbose_all -->18.0<!-- /num --> s for describe, <!-- num:lat_median_terse_all -->13.4<!-- /num --> s
+for terse, and <!-- num:lat_median_terse_ocr_all -->12.9<!-- /num --> s for terse with OCR. The terse numbers are much slower than the
+model really is. The whole time, another process was running a second 4B model on the same
+Ollama server. You can see what that cost in `results/latency_probe.csv`. While the other model
+was loaded, Ollama spent about 12 s on prompt evaluation per image, because the image encoder got
+pushed off the GPU. Once the other model was unloaded, the same call took 0.5 to 1.4 s. So on an
+idle M4 a terse answer comes back in about a second, and in about 13 when it has to share. The
+describe prompt also has to generate up to 300 tokens on top of that.
 
 ![latency](results/latency.png)
 
 ### Blur
 
-Accuracy by Gaussian blur level (radius 0, 1.6, 3.2), terse regime: <!-- num:blur0_terse -->74<!-- /num -->%, <!-- num:blur1_terse -->70<!-- /num -->%,
-<!-- num:blur2_terse -->65<!-- /num -->%. With OCR: <!-- num:blur0_terse_ocr -->78<!-- /num -->%, <!-- num:blur1_terse_ocr -->74<!-- /num -->%, <!-- num:blur2_terse_ocr -->65<!-- /num -->%.
-The describe regime is flat at <!-- num:blur0_verbose -->61<!-- /num -->%, <!-- num:blur1_verbose -->61<!-- /num -->%, <!-- num:blur2_verbose -->67<!-- /num -->%,
-which says more about its errors being elsewhere than about blur.
+I also blurred the images with a Gaussian blur of radius 0, 1.6 and 3.2. The terse prompt got
+<!-- num:blur0_terse -->74<!-- /num -->%, <!-- num:blur1_terse -->70<!-- /num -->% and
+<!-- num:blur2_terse -->65<!-- /num -->%. With OCR it got <!-- num:blur0_terse_ocr -->78<!-- /num -->%, <!-- num:blur1_terse_ocr -->74<!-- /num -->% and <!-- num:blur2_terse_ocr -->65<!-- /num -->%.
+The describe prompt stayed flat at <!-- num:blur0_verbose -->61<!-- /num -->%, <!-- num:blur1_verbose -->61<!-- /num -->% and <!-- num:blur2_verbose -->67<!-- /num -->%.
+I think that's because its mistakes come from somewhere else, so blur doesn't matter much for it.
 
 ![accuracy vs blur](results/accuracy_vs_blur.png)
 
 ### Negative results
 
-* The thinking variant `qwen3-vl:4b` ignores `think: false` in Ollama 0.35 and returns an empty answer
-  inside a 40 token budget. With a 2000 token budget it got 10 of 12 probe images right but took 9 to
-  57 s each with 40 to 315 words of reasoning first (`results/thinking_probe.csv`). Unusable for this.
-* 7-segment readouts are a wall for this model at this size: it reads the lit shape as "888".
-* OCR does not fix dials. Knowing the tick labels does not tell you where the pointer is.
+* The thinking variant `qwen3-vl:4b` ignores `think: false` in Ollama 0.35, and with a 40 token
+  budget it returns an empty answer. With a 2000 token budget it got 10 of 12 probe images right,
+  but each one took 9 to 57 s and came with 40 to 315 words of reasoning first
+  (`results/thinking_probe.csv`). That's too slow to use here.
+* This model at this size just can't read 7-segment displays. It reads the lit shape as "888".
+* OCR doesn't fix dials. Knowing the tick labels doesn't tell you where the pointer is.
 
 ## What blind users actually asked for
 
-Three posts from r/Blind that set the scope of this project, quoted as written:
+I based the scope of this project on three posts from r/Blind. Here they are as written.
 
 > "AI is so convoluted in it's descriptions that calling someone is waaay faster, E.G, I need to know the exact position of the water level dial of my coffee machine... it'll describe absolutelly everything before saying the water level and usually it will say it wrong."
 > https://www.reddit.com/r/Blind/comments/1vyh4dv/
@@ -114,27 +118,28 @@ Three posts from r/Blind that set the scope of this project, quoted as written:
 > "i'm using qwen3vl-2b model to describe images via nvda script. takes 10s on my laptop with no gpu."
 > https://www.reddit.com/r/Blind/comments/1txha0r/
 
-The first one is the "words before answer" metric. The second one is why everything here is
-local. The third one is the latency budget I am comparing against.
+The first post is where the "words before answer" metric comes from. The second is why
+everything here runs locally. The third gave me a latency to compare against.
 
 ## Limitations
 
-* The test set is synthetic. Dials, 7-segment panels and labels are drawn with PIL from a
-  seed, so the ground truth is exact and the set is reproducible, but there is no glare,
-  no hand in the frame, no perspective and no partial framing. Real phone photos from blind
-  users will be harder and are the next step.
-* One small model (`qwen3-vl:4b`), one machine, one run per image at temperature 0.
-* No blind user has used this yet. The three quotes above are the only user input.
-* The scorer takes the first number (or the first "left"/"right") in the answer. A verbose
-  answer that says a wrong number before the right one is counted wrong. That is what the
-  user hears first, but it does mean the verbose regime is penalised for length twice.
-* I looked for a free real 7-segment or dial photo set with clear labels and a licence to
-  add as a real subset and did not find one I could use in the time I had.
+* The test set is synthetic. I drew the dials, 7-segment panels and labels with PIL from a
+  seed. That makes the ground truth exact and the set easy to reproduce. But there's no
+  glare, no hand in the frame, no perspective and nothing cut off at the edges. Real phone
+  photos from blind users will be harder, and that's what I want to try next.
+* I only tested one small model (`qwen3-vl:4b`) on one machine, with one run per image at
+  temperature 0.
+* No blind user has tried this yet. The three quotes above are all the user input I have.
+* The scorer takes the first number (or the first "left"/"right") in the answer. If a long
+  answer says a wrong number before the right one, it counts as wrong. That's what the user
+  hears first, but it also means the describe prompt gets punished for its length twice.
+* I looked for a free set of real 7-segment or dial photos with clear labels and a licence I
+  could use. I didn't find one in the time I had.
 
 ## How to run
 
-Needs a Mac (for the Apple Vision OCR path; without it the tool still runs, just without
-OCR) and [Ollama](https://ollama.com).
+You need [Ollama](https://ollama.com) and a Mac for the Apple Vision OCR part. On other
+machines the tool still runs, just without OCR.
 
 ```
 ollama pull qwen3-vl:4b
@@ -145,8 +150,8 @@ oav ask photo.jpg "what is the best before date" --ocr --time
 oav watch "what does the display say"        # webcam, space to ask, q to quit
 ```
 
-Output is plain text, the answer on the first line and nothing else, so a screen reader
-reads the answer and stops.
+The output is plain text with only the answer on the first line, so a screen reader reads
+the answer and then stops.
 
 To regenerate the test set and the results:
 
@@ -159,15 +164,14 @@ To regenerate the test set and the results:
 .venv/bin/python -m pytest
 ```
 
-`METHODOLOGY.md` has the match rules per category and the threats to validity.
-`notes/LOGBOOK.md` has the dated notes, including what did not work.
+The match rules for each category and the threats to validity are in `METHODOLOGY.md`.
+My dated notes are in `notes/LOGBOOK.md`, including the things that didn't work.
 
 ## Privacy
 
-Nothing leaves the machine. The image goes to the Ollama server on localhost and to the
-operating system's text recogniser. There are no API keys, no accounts and no telemetry.
-The repo contains no photos of people or of anyone's home; every image in `data/` is
-generated.
+Nothing leaves your machine. The image only goes to the Ollama server on localhost and to
+the operating system's text recogniser. I don't use API keys, accounts or telemetry. There
+are no photos of people or anyone's home in the repo. Every image in `data/` is generated.
 
 ## Licence
 
