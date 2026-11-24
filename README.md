@@ -1,5 +1,3 @@
-<p align="center"><img src="assets/banner.jpg" alt="Line drawing of a phone held up to an analog dial gauge, with one short speech bubble" width="100%"></p>
-
 # one-answer-vision
 
 You point the camera, ask a question, and get a short answer back, all offline.
