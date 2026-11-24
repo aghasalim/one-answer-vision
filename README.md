@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.jpg" alt="Line drawing of a phone held up to an analog dial gauge, with one short speech bubble" width="100%"></p>
+
 # one-answer-vision
 
 You point the camera, ask a question, and get a short answer back, all offline.
@@ -9,6 +11,19 @@ or a digital display, finding a best-before date, picking one of two boxes, read
 dosing line on medication, or finding where a button is.
 
 [![ci](https://github.com/aghasalim/one-answer-vision/actions/workflows/ci.yml/badge.svg)](https://github.com/aghasalim/one-answer-vision/actions/workflows/ci.yml)
+
+<details>
+<summary>Contents</summary>
+
+- [Abstract](#abstract)
+- [Results](#results)
+- [What blind users actually asked for](#what-blind-users-actually-asked-for)
+- [Limitations](#limitations)
+- [How to run](#how-to-run)
+- [Privacy](#privacy)
+- [Licence](#licence)
+
+</details>
 
 ## Abstract
 
